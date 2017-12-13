@@ -127,16 +127,16 @@ class apt (
     notify  => Class['apt::update'],
   }
 
-  file { 'sources.list.d':
-    ensure  => directory,
-    path    => $::apt::sources_list_d,
-    owner   => root,
-    group   => root,
-    mode    => '0644',
-    purge   => $_purge['sources.list.d'],
-    recurse => $_purge['sources.list.d'],
-    notify  => Class['apt::update'],
-  }
+  #file { 'sources.list.d':
+  #  ensure  => directory,
+  #  path    => $::apt::sources_list_d,
+  #  owner   => root,
+  #  group   => root,
+  #  mode    => '0644',
+  #  purge   => $_purge['sources.list.d'],
+  #  recurse => $_purge['sources.list.d'],
+  #  notify  => Class['apt::update'],
+  #}
 
   file { 'preferences':
     ensure => $preferences_ensure,
